@@ -16,7 +16,7 @@ namespace Ex05.Bool_Pgia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormEntry());
         }
     }
 }
