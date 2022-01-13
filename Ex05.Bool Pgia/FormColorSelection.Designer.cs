@@ -41,7 +41,7 @@ namespace Ex05.Bool_Pgia
             // 
             // ButtonColorPurple
             // 
-            this.ButtonColorPurple.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ButtonColorPurple.BackColor = System.Drawing.Color.Purple;
             this.ButtonColorPurple.Location = new System.Drawing.Point(12, 12);
             this.ButtonColorPurple.Name = "ButtonColorPurple";
             this.ButtonColorPurple.Size = new System.Drawing.Size(40, 40);

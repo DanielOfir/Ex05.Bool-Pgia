@@ -13,11 +13,11 @@ namespace Ex05.Bool_Pgia
         private List<Color> m_AIColorsSelectedList;
         private static List<Color> m_AIColorOptionsList = new List<Color>
                                                               {
-                                                                  System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192))))),
+                                                                  System.Drawing.Color.Purple,
                                                                   System.Drawing.Color.Red,
                                                                   System.Drawing.Color.Lime,
                                                                   System.Drawing.Color.Aqua,
-                                                                  System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192))))),
+                                                                  System.Drawing.Color.Blue,
                                                                   System.Drawing.Color.Yellow,
                                                                   System.Drawing.Color.Maroon,
                                                                   System.Drawing.Color.White

@@ -13,7 +13,7 @@ namespace Ex05.Bool_Pgia
     public partial class FormGameControlBar : Form
     {
         private const int k_AmountOfUserGuessButtons = 4;
-        public static List<Color> buttonColorsList = new List<Color>();
+        public static List<Color> buttonColorsList = new List<Color>(); // Maybe create property
         private Dictionary<int, Color> colorHitMapping = new Dictionary<int, Color>() // TODO: Need a better way
                                                              {
                                                                  {-1, SystemColors.Control},
@@ -56,6 +56,9 @@ namespace Ex05.Bool_Pgia
 
         private void ButtonFinishUserGuess_Click(object i_Sender, EventArgs i_)
         {
+            FormGame parentForm = this.Parent as FormGame;
+            
+
             Color[] userSelectedColors = new Color[] // Maybe save as member
                                              {
                                                  ButtonUserGuess1.BackColor ,
@@ -63,7 +66,9 @@ namespace Ex05.Bool_Pgia
                                                  ButtonUserGuess3.BackColor,
                                                  ButtonUserGuess4.BackColor
                                              };
-            int[] userHits = GameLogicHandler.GetUserHits(userSelectedColors);
+            int[] userHits = GameLogicHandler.GetUserHits(userSelectedColors, parentForm.AIColorsSelection);
+
+
             ButtonUserResult1.BackColor = colorHitMapping[userHits[0]];
             ButtonUserResult2.BackColor = colorHitMapping[userHits[1]];
             ButtonUserResult3.BackColor = colorHitMapping[userHits[2]];
@@ -74,11 +79,27 @@ namespace Ex05.Bool_Pgia
             ButtonUserResult3.Enabled = false;
             ButtonUserResult4.Enabled = false;
 
-            //FormGame.CurrentActiveControl.SelectNextControl(ActiveControl, true, true, true, true);
-            //FormGame.CurrentActiveControl.Enabled = true;
+            
 
-            Button senderButton = i_Sender as Button;
-            senderButton.Enabled = false;
+            if (GameLogicHandler.CheckWin(userHits) == true)
+            {
+                parentForm.showAISelections();
+            }
+
+            else
+            {
+ 
+                parentForm.Controls[string.Format("GameControlPanel{0}", ++parentForm.CurrentActiveControl)].Enabled = true; // Enable next controlbar
+
+                //Button senderButton = i_Sender as Button;
+
+            }
+
+            buttonColorsList.Clear();
+            this.Enabled = false;
+
+
+
 
         }
     }

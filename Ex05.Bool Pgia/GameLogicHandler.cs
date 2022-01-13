@@ -11,6 +11,25 @@ namespace Ex05.Bool_Pgia
     public static class GameLogicHandler
     {
 
+        public static bool CheckWin(int[] i_hitList)
+        {
+            int counter = 0;
+            for(int i = 0; i < i_hitList.Length; i++)
+            {
+                if(i_hitList[i] == 1)
+                {
+                    counter++;
+                }
+            }
+
+            if(counter == i_hitList.Length)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool IsColorAlreadySelected(object i_Sender)
         {
             Button senderButton = i_Sender as Button;
@@ -30,13 +49,13 @@ namespace Ex05.Bool_Pgia
             return false;
         }
 
-        public static int[] GetUserHits(Color[] i_userSelectedColors)
+        public static int[] GetUserHits(Color[] i_userSelectedColors, List<Color> i_AISelectedColors)
         {
             int[] hitFlags = new int[i_userSelectedColors.Length];
 
             for (int i = 0; i < i_userSelectedColors.Length; i++)
             {
-                if (i_userSelectedColors[i] == FormGame.AIColorsSelection[i])
+                if (i_userSelectedColors[i] == i_AISelectedColors[i])
                 {
                     hitFlags[i] = 1; // Hit on location
                 }
@@ -45,7 +64,7 @@ namespace Ex05.Bool_Pgia
                     int zeroFlag = 0;
                     for (int j = 0; j < i_userSelectedColors.Length; j++)
                     {
-                        if (FormGame.AIColorsSelection[j] == i_userSelectedColors[i])
+                        if (i_AISelectedColors[j] == i_userSelectedColors[i])
                         {
                             hitFlags[i] = 0; // Hit
                             zeroFlag = 1;
