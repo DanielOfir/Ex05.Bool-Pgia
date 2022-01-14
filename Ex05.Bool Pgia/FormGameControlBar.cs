@@ -13,13 +13,25 @@ namespace Ex05.Bool_Pgia
     public partial class FormGameControlBar : Form
     {
         private const int k_AmountOfUserGuessButtons = 4;
-        public static List<Color> buttonColorsList = new List<Color>(); // Maybe create property
+        private List<Color> buttonColorsList = new List<Color>(); // Maybe create property
         private Dictionary<int, Color> colorHitMapping = new Dictionary<int, Color>() // TODO: Need a better way
                                                              {
                                                                  {-1, SystemColors.Control},
                                                                  {0, Color.Yellow},
                                                                  {1, Color.Black}
                                                              };
+
+        public List<Color> SelectedColorList
+        {
+            get
+            {
+                return buttonColorsList;
+            }
+            set
+            {
+                buttonColorsList = value;
+            }
+        }
 
 
         public FormGameControlBar()
@@ -31,7 +43,7 @@ namespace Ex05.Bool_Pgia
 
         private void ButtonUserGuess_Click(object i_Sender, EventArgs i_)
         {
-            Form colorForm = new FormColorSelection(i_Sender);
+            Form colorForm = new FormColorSelection(i_Sender, SelectedColorList);
             colorForm.ShowDialog();
         }
 
@@ -81,7 +93,7 @@ namespace Ex05.Bool_Pgia
 
             
 
-            if (GameLogicHandler.CheckWin(userHits) == true)
+            if (GameLogicHandler.CheckWin(userHits))
             {
                 parentForm.showAISelections();
             }
@@ -91,7 +103,6 @@ namespace Ex05.Bool_Pgia
  
                 parentForm.Controls[string.Format("GameControlPanel{0}", ++parentForm.CurrentActiveControl)].Enabled = true; // Enable next controlbar
 
-                //Button senderButton = i_Sender as Button;
 
             }
 

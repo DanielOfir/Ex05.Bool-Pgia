@@ -30,10 +30,10 @@ namespace Ex05.Bool_Pgia
             return false;
         }
 
-        public static bool IsColorAlreadySelected(object i_Sender)
+        public static bool IsColorAlreadySelected(object i_Sender,List<Color> i_SelectedColors)
         {
             Button senderButton = i_Sender as Button;
-            foreach (Color color in FormGameControlBar.buttonColorsList)
+            foreach (Color color in i_SelectedColors)
             {
                 if (senderButton.BackColor == color)
                 {

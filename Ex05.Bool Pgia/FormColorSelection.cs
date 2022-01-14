@@ -13,11 +13,13 @@ namespace Ex05.Bool_Pgia
     public partial class FormColorSelection : Form
     {
         private Button m_SenderButton = null;
+        private List<Color> m_SelectedColors;
 
-        public FormColorSelection(object i_Sender)
+        public FormColorSelection(object i_Sender, List<Color> i_SelectedColors)
         {
             m_SenderButton = i_Sender as Button;
             InitializeComponent();
+            m_SelectedColors = i_SelectedColors;
         }
 
 
@@ -31,7 +33,7 @@ namespace Ex05.Bool_Pgia
         private void ButtonColor_Click(object i_Sender, EventArgs i_)
         {
 
-            if (!GameLogicHandler.IsColorAlreadySelected(i_Sender))
+            if (!GameLogicHandler.IsColorAlreadySelected(i_Sender,m_SelectedColors))
             {
                 changeSenderColor(i_Sender);
             }
