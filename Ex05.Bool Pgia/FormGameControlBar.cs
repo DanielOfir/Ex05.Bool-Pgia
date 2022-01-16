@@ -43,6 +43,8 @@ namespace Ex05.Bool_Pgia
 
         private void ButtonUserGuess_Click(object i_Sender, EventArgs i_)
         {
+            Button senderButton = i_Sender as Button;
+            SelectedColorList.Remove(senderButton.BackColor); // If color already selected for the button and user wants to change
             Form colorForm = new FormColorSelection(i_Sender, SelectedColorList);
             colorForm.ShowDialog();
         }
@@ -100,10 +102,17 @@ namespace Ex05.Bool_Pgia
 
             else
             {
- 
-                parentForm.Controls[string.Format("GameControlPanel{0}", ++parentForm.CurrentActiveControl)].Enabled = true; // Enable next controlbar
-
-
+                if(parentForm.CurrentActiveControl == parentForm.AmountOfRows)
+                {
+                    // Last guess, no win
+                    parentForm.showAISelections();
+                }
+                else
+                {
+                    parentForm.Controls[string.Format("GameControlPanel{0}", ++parentForm.CurrentActiveControl)]
+                        .Enabled = true; // Enable next controlbar
+                    
+                }
             }
 
             buttonColorsList.Clear();

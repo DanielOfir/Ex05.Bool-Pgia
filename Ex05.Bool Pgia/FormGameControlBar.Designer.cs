@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Ex05.Bool_Pgia
 {
     partial class FormGameControlBar
@@ -82,6 +84,7 @@ namespace Ex05.Bool_Pgia
             // 
             // ButtonFinishUserGuess
             // 
+            this.ButtonFinishUserGuess.Enabled = false;
             this.ButtonFinishUserGuess.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonFinishUserGuess.Location = new System.Drawing.Point(185, 12);
             this.ButtonFinishUserGuess.Name = "ButtonFinishUserGuess";
@@ -89,44 +92,43 @@ namespace Ex05.Bool_Pgia
             this.ButtonFinishUserGuess.TabIndex = 4;
             this.ButtonFinishUserGuess.Text = "-->>";
             this.ButtonFinishUserGuess.UseVisualStyleBackColor = true;
-            this.ButtonFinishUserGuess.Enabled = false;
             this.ButtonFinishUserGuess.Click += new System.EventHandler(this.ButtonFinishUserGuess_Click);
             // 
             // ButtonUserResult1
             // 
+            this.ButtonUserResult1.Enabled = false;
             this.ButtonUserResult1.Location = new System.Drawing.Point(231, 2);
             this.ButtonUserResult1.Name = "ButtonUserResult1";
             this.ButtonUserResult1.Size = new System.Drawing.Size(17, 17);
             this.ButtonUserResult1.TabIndex = 5;
             this.ButtonUserResult1.UseVisualStyleBackColor = true;
-            this.ButtonUserResult1.Enabled = false;
             // 
             // ButtonUserResult2
             // 
+            this.ButtonUserResult2.Enabled = false;
             this.ButtonUserResult2.Location = new System.Drawing.Point(251, 2);
             this.ButtonUserResult2.Name = "ButtonUserResult2";
             this.ButtonUserResult2.Size = new System.Drawing.Size(17, 17);
             this.ButtonUserResult2.TabIndex = 6;
             this.ButtonUserResult2.UseVisualStyleBackColor = true;
-            this.ButtonUserResult2.Enabled = false;
             // 
             // ButtonUserResult3
             // 
+            this.ButtonUserResult3.Enabled = false;
             this.ButtonUserResult3.Location = new System.Drawing.Point(231, 22);
             this.ButtonUserResult3.Name = "ButtonUserResult3";
             this.ButtonUserResult3.Size = new System.Drawing.Size(17, 17);
             this.ButtonUserResult3.TabIndex = 7;
             this.ButtonUserResult3.UseVisualStyleBackColor = true;
-            this.ButtonUserResult3.Enabled = false;
             // 
             // ButtonUserResult4
             // 
+            this.ButtonUserResult4.Enabled = false;
             this.ButtonUserResult4.Location = new System.Drawing.Point(251, 22);
             this.ButtonUserResult4.Name = "ButtonUserResult4";
             this.ButtonUserResult4.Size = new System.Drawing.Size(17, 17);
             this.ButtonUserResult4.TabIndex = 8;
             this.ButtonUserResult4.UseVisualStyleBackColor = true;
-            this.ButtonUserResult4.Enabled = false;
             // 
             // FormGameControlBar
             // 

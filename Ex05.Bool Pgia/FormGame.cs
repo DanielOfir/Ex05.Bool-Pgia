@@ -26,6 +26,14 @@ namespace Ex05.Bool_Pgia
             startGame();
         }
 
+        public int AmountOfRows
+        {
+            get
+            {
+                return m_AmountOfRows;
+            }
+        }
+
 
         public List<Color> AIColorsSelection
         {
