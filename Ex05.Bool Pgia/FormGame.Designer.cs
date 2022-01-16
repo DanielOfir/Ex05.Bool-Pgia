@@ -86,9 +86,9 @@ namespace Ex05.Bool_Pgia
             this.Controls.Add(this.ButtonAISelection3);
             this.Controls.Add(this.ButtonAISelection2);
             this.Controls.Add(this.ButtonAISelection1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormGame";
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.FormGame_Load);
             this.ResumeLayout(false);
 
         }

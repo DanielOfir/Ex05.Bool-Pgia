@@ -20,10 +20,16 @@ namespace Ex05.Bool_Pgia
 
         public FormGame(int i_AmountOfRows)
         {
-            InitializeComponent();
             m_AmountOfRows = i_AmountOfRows;
+            InitializeComponent();
+            ChangeFormSizeByAmountOfRows(i_AmountOfRows);
             initializeFormGameControlBar();
             startGame();
+        }
+
+        private void ChangeFormSizeByAmountOfRows(int i_amountOfRows)
+        {
+            this.ClientSize = new System.Drawing.Size(286, i_amountOfRows * 50 + 45);
         }
 
         public int AmountOfRows
@@ -76,12 +82,6 @@ namespace Ex05.Bool_Pgia
 
         private void initializeFormGameControlBar()
         {
-            //FormGameControlBar topRowControls = new FormGameControlBar();
-            //topRowControls.TopLevel = false;
-            //topRowControls.Top = ButtonAISelection1.Bottom + 10;
-            //topRowControls.Left = ButtonAISelection1.Left - 3;
-            //Controls.Add(topRowControls);
-            //topRowControls.Show();
             FormGameControlBar prevControlsRow = new FormGameControlBar();
             for (int i = 0; i < m_AmountOfRows; i++)
             {
