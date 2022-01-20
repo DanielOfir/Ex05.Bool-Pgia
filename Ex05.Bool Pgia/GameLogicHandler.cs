@@ -37,6 +37,7 @@ namespace Ex05.Bool_Pgia
             {
                 if (senderButton.BackColor == color)
                 {
+                    // TODO: Remove \n
                     string message = "This color is already selected!\nPlease select a different color";
                     string caption = "Color Selection Error";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
