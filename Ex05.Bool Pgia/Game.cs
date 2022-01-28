@@ -11,21 +11,23 @@ namespace Ex05.Bool_Pgia
     {
         private const int k_AmountOfSelections = 4;
         private static readonly List<Color> sr_AiColorOptionsList = new List<Color>
-                                                                       {
-                                                                           Color.Purple,
-                                                                           Color.Red,
-                                                                           Color.Lime,
-                                                                           Color.Aqua,
-                                                                           Color.Blue,
-                                                                           Color.Yellow,
-                                                                           Color.Maroon,
-                                                                           Color.White,
-                                                                       };
+                                                                        {
+                                                                            Color.Purple,
+                                                                            Color.Red,
+                                                                            Color.Lime,
+                                                                            Color.Aqua,
+                                                                            Color.Blue,
+                                                                            Color.Yellow,
+                                                                            Color.Maroon,
+                                                                            Color.White,
+                                                                        };
 
+        private Random rand;
         private List<Color> m_AiColorsSelectedList;
 
         public Game()
         {
+            this.rand = new Random();
             generateAiSelection();
         }
 
@@ -40,10 +42,9 @@ namespace Ex05.Bool_Pgia
         private void generateAiSelection()
         {
             m_AiColorsSelectedList = new List<Color>();
-            Random rand = new Random();
             for (int i = 0; i < k_AmountOfSelections; i++)
             {
-                int selectionIndex = rand.Next(sr_AiColorOptionsList.Count);
+                int selectionIndex = this.rand.Next(sr_AiColorOptionsList.Count);
                 m_AiColorsSelectedList.Add(sr_AiColorOptionsList[selectionIndex]);
                 sr_AiColorOptionsList.RemoveAt(selectionIndex);
             }
