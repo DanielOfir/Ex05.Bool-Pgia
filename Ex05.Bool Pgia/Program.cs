@@ -14,7 +14,6 @@ namespace Ex05.Bool_Pgia
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormEntry());
         }
