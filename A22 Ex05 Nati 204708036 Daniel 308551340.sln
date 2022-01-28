@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.Bool Pgia", "Ex05.Bool Pgia\Ex05.Bool Pgia.csproj", "{EFBABF1F-F962-4325-BE67-4402EF58433D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bool Pgia", "Ex05.Bool Pgia\Bool Pgia.csproj", "{EFBABF1F-F962-4325-BE67-4402EF58433D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
