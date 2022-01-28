@@ -124,6 +124,7 @@ namespace Ex05.Bool_Pgia
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(201, 107);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Controls.Add(this.ButtonColorWhite);
             this.Controls.Add(this.ButtonColorBrown);
             this.Controls.Add(this.ButtonColorYellow);

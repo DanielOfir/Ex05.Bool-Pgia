@@ -82,6 +82,7 @@ namespace Ex05.Bool_Pgia
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(286, 371);
+            this.CenterToScreen();
             this.Controls.Add(this.ButtonAISelection4);
             this.Controls.Add(this.ButtonAISelection3);
             this.Controls.Add(this.ButtonAISelection2);

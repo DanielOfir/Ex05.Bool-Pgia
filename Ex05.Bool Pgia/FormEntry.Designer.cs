@@ -57,6 +57,7 @@ namespace Ex05.Bool_Pgia
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 98);
+            this.CenterToScreen();
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.ButtonNumOfChances);
             this.Name = "FormEntry";
