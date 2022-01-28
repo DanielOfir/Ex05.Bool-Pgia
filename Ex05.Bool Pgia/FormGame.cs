@@ -13,39 +13,37 @@ namespace Ex05.Bool_Pgia
 {
     public partial class FormGame : Form
     {
-        private int m_AmountOfRows;
-        //private static List<Color> m_AIColorsSelection;
-        private List<Color> m_AIColorsSelection;
-        private int currentActiveControl = 1;
+        private readonly int r_AmountOfRows;
+        private List<Color> m_AiColorsSelection;
+        private int m_CurrentActiveControl = 1;
 
         public FormGame(int i_AmountOfRows)
         {
-            m_AmountOfRows = i_AmountOfRows;
+            r_AmountOfRows = i_AmountOfRows;
             InitializeComponent();
-            ChangeFormSizeByAmountOfRows(i_AmountOfRows);
+            changeFormSizeByAmountOfRows(i_AmountOfRows);
             initializeFormGameControlBar();
             startGame();
         }
 
-        private void ChangeFormSizeByAmountOfRows(int i_amountOfRows)
+        private void changeFormSizeByAmountOfRows(int i_AmountOfRows)
         {
-            this.ClientSize = new System.Drawing.Size(286, i_amountOfRows * 50 + 45);
+            this.ClientSize = new System.Drawing.Size(286, (i_AmountOfRows * 50) + 45);
         }
 
         public int AmountOfRows
         {
             get
             {
-                return m_AmountOfRows;
+                return r_AmountOfRows;
             }
         }
 
-
-        public List<Color> AIColorsSelection
+        public List<Color> AiColorsSelection
         {
             get
             {
-                return m_AIColorsSelection;
+                return m_AiColorsSelection;
             }
         }
 
@@ -53,37 +51,37 @@ namespace Ex05.Bool_Pgia
         {
             get
             {
-                return currentActiveControl;
+                return m_CurrentActiveControl;
             }
 
             set
             {
-                currentActiveControl = value;
+                m_CurrentActiveControl = value;
             }
         }
 
         private void startGame()
         {
             Game game = new Game();
-            m_AIColorsSelection = new List<Color>();
-            foreach (Color color in game.AISelectedColors)
+            m_AiColorsSelection = new List<Color>();
+            foreach (Color color in game.AiSelectedColors)
             {
-                m_AIColorsSelection.Add(color);
+                m_AiColorsSelection.Add(color);
             }
         }
 
-        public void showAISelections()
+        public void ShowAiSelections()
         {
-           ButtonAISelection1.BackColor = m_AIColorsSelection[0];
-           ButtonAISelection2.BackColor = m_AIColorsSelection[1];
-           ButtonAISelection3.BackColor = m_AIColorsSelection[2];
-           ButtonAISelection4.BackColor = m_AIColorsSelection[3];
+            ButtonAISelection1.BackColor = m_AiColorsSelection[0];
+            ButtonAISelection2.BackColor = m_AiColorsSelection[1];
+            ButtonAISelection3.BackColor = m_AiColorsSelection[2];
+            ButtonAISelection4.BackColor = m_AiColorsSelection[3];
         }
 
         private void initializeFormGameControlBar()
         {
             FormGameControlBar prevControlsRow = new FormGameControlBar();
-            for (int i = 0; i < m_AmountOfRows; i++)
+            for (int i = 0; i < r_AmountOfRows; i++)
             {
                 FormGameControlBar controlsRow = new FormGameControlBar();
                 if (i == 0)
@@ -107,9 +105,6 @@ namespace Ex05.Bool_Pgia
 
                 prevControlsRow = controlsRow;
             }
-
-            //m_currentActiveControl = topRowControls;
-
         }
     }
 }

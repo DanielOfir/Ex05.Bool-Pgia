@@ -7,44 +7,45 @@ using System.Threading.Tasks;
 
 namespace Ex05.Bool_Pgia
 {
-    class Game
+    internal class Game
     {
         private const int k_AmountOfSelections = 4;
-        private List<Color> m_AIColorsSelectedList;
-        private static List<Color> m_AIColorOptionsList = new List<Color>
-                                                              {
-                                                                  System.Drawing.Color.Purple,
-                                                                  System.Drawing.Color.Red,
-                                                                  System.Drawing.Color.Lime,
-                                                                  System.Drawing.Color.Aqua,
-                                                                  System.Drawing.Color.Blue,
-                                                                  System.Drawing.Color.Yellow,
-                                                                  System.Drawing.Color.Maroon,
-                                                                  System.Drawing.Color.White
-                                                              };
+        private static readonly List<Color> sr_AiColorOptionsList = new List<Color>
+                                                                       {
+                                                                           Color.Purple,
+                                                                           Color.Red,
+                                                                           Color.Lime,
+                                                                           Color.Aqua,
+                                                                           Color.Blue,
+                                                                           Color.Yellow,
+                                                                           Color.Maroon,
+                                                                           Color.White,
+                                                                       };
+
+        private List<Color> m_AiColorsSelectedList;
 
         public Game()
         {
             generateAiSelection();
         }
 
-        public List<Color> AISelectedColors
+        public List<Color> AiSelectedColors
         {
             get
             {
-                return m_AIColorsSelectedList;
+                return m_AiColorsSelectedList;
             }
         }
 
         private void generateAiSelection()
         {
-            m_AIColorsSelectedList = new List<Color>();
+            m_AiColorsSelectedList = new List<Color>();
             Random rand = new Random();
             for (int i = 0; i < k_AmountOfSelections; i++)
             {
-                int selectionIndex = rand.Next(m_AIColorOptionsList.Count);
-                m_AIColorsSelectedList.Add(m_AIColorOptionsList[selectionIndex]);
-                m_AIColorOptionsList.RemoveAt(selectionIndex);
+                int selectionIndex = rand.Next(sr_AiColorOptionsList.Count);
+                m_AiColorsSelectedList.Add(sr_AiColorOptionsList[selectionIndex]);
+                sr_AiColorOptionsList.RemoveAt(selectionIndex);
             }
         }
     }

@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 namespace Ex05.Bool_Pgia
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormEntry());

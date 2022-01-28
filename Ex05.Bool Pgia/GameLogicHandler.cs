@@ -10,19 +10,18 @@ namespace Ex05.Bool_Pgia
 {
     public static class GameLogicHandler
     {
-
-        public static bool CheckWin(int[] i_hitList)
+        public static bool CheckWin(int[] i_HitList)
         {
             int counter = 0;
-            for(int i = 0; i < i_hitList.Length; i++)
+            for (int i = 0; i < i_HitList.Length; i++)
             {
-                if(i_hitList[i] == 1)
+                if (i_HitList[i] == 1)
                 {
                     counter++;
                 }
             }
 
-            if(counter == i_hitList.Length)
+            if (counter == i_HitList.Length)
             {
                 return true;
             }
@@ -30,15 +29,14 @@ namespace Ex05.Bool_Pgia
             return false;
         }
 
-        public static bool IsColorAlreadySelected(object i_Sender,List<Color> i_SelectedColors)
+        public static bool IsColorAlreadySelected(object i_Sender, List<Color> i_SelectedColors)
         {
             Button senderButton = i_Sender as Button;
             foreach (Color color in i_SelectedColors)
             {
                 if (senderButton.BackColor == color)
                 {
-                    // TODO: Remove \n
-                    string message = "This color is already selected!\nPlease select a different color";
+                    string message = "This color is already selected!" + Environment.NewLine + "Please select a different color";
                     string caption = "Color Selection Error";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     DialogResult result;
@@ -50,22 +48,22 @@ namespace Ex05.Bool_Pgia
             return false;
         }
 
-        public static int[] GetUserHits(Color[] i_userSelectedColors, List<Color> i_AISelectedColors)
+        public static int[] GetUserHits(Color[] i_UserSelectedColors, List<Color> i_AiSelectedColors)
         {
-            int[] hitFlags = new int[i_userSelectedColors.Length];
+            int[] hitFlags = new int[i_UserSelectedColors.Length];
 
-            for (int i = 0; i < i_userSelectedColors.Length; i++)
+            for (int i = 0; i < i_UserSelectedColors.Length; i++)
             {
-                if (i_userSelectedColors[i] == i_AISelectedColors[i])
+                if (i_UserSelectedColors[i] == i_AiSelectedColors[i])
                 {
                     hitFlags[i] = 1; // Hit on location
                 }
                 else
                 {
                     int zeroFlag = 0;
-                    for (int j = 0; j < i_userSelectedColors.Length; j++)
+                    for (int j = 0; j < i_UserSelectedColors.Length; j++)
                     {
-                        if (i_AISelectedColors[j] == i_userSelectedColors[i])
+                        if (i_AiSelectedColors[j] == i_UserSelectedColors[i])
                         {
                             hitFlags[i] = 0; // Hit
                             zeroFlag = 1;
@@ -84,7 +82,5 @@ namespace Ex05.Bool_Pgia
 
             return hitFlags;
         }
-
     }
-
 }

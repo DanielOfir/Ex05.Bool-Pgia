@@ -38,7 +38,6 @@ namespace Ex05.Bool_Pgia
         public FormEntry()
         {
             InitializeComponent();
-
         }
 
         private void ButtonStart_Click(object i_Sender, EventArgs i_)
@@ -55,6 +54,5 @@ namespace Ex05.Bool_Pgia
             this.AmountOfRows++;
             theSender.Text = string.Format("Number of chances: {0}", this.AmountOfRows);
         }
-
     }
 }
